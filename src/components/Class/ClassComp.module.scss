@@ -1,0 +1,77 @@
+
+.search_container {
+    margin-top: 15px;
+
+    .box_search {
+        i {
+            margin-left: 5px;
+        }
+        background-color: white;
+        border-radius: 5px;
+        padding: 5px;
+    }
+}
+
+// Paging
+
+.arrow {
+
+    font-size: 16px;
+    display: block;
+    padding-top: 2px;
+
+    cursor: default;
+    &:hover {
+        color: #697a8d;
+        background-color: #f0f2f4;
+        border: 0px solid #d9dee3;
+    }
+
+    &.active {
+        color: #696cff;
+        &:hover {
+            color: black;
+            background-color: #e1e4e8;
+            border-color: rgba(67, 89, 113, 0.3);
+        }
+    }
+    span {
+        display: inline-block;
+        padding-top: 2px;
+    }
+
+
+}
+
+.page_size {
+    color: #696cff !important;
+    border: 1px solid #696cff !important;
+    margin-left: 15px !important;
+    margin-right: 10px !important;
+    background-color: transparent;
+    cursor: default;
+    &:hover {
+        color: black;
+        border: 1px solid #696cff !important;
+        background-color: transparent;
+        color: #696cff;
+    }
+}
+
+
+.avatar_box {
+    width: fit-content;
+    height: fit-content;
+}
+
+.username {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    div {
+        margin-left: 10px;
+    }
+    h5 {
+        margin: 0;
+    }
+}

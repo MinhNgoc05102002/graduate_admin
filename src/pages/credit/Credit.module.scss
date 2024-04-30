@@ -1,0 +1,211 @@
+.container *{
+    // color: #282e3e;
+    max-width: 800px;
+}
+
+// Box 
+.box_padding {
+    padding: 0.5rem 1rem;
+}
+
+.learn_btn {
+    display: flex;
+    flex-wrap: wrap;
+
+    .title {
+        font-size: 16px;
+    }
+    
+    .learn_icon {
+        color: #696cff;
+        font-size: 30px;
+        margin-right: 0.5rem;
+    }
+}
+
+.cardSwiper {
+    margin: unset !important;
+    // overflow-y: visible;
+}
+
+// Front & Back card 
+
+.flashcard_box {
+    width: 100%;
+    display: block;
+    height: 26vw;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    justify-content: space-around;
+    flex-direction: row;
+    .audio_btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+    .content {
+        font-size: 2.2rem;
+        display: inline-block;
+        text-align: center;
+    }
+    .image {
+        display: inline-block;
+        img {
+            border-radius: 10px;
+            max-width: 180px;
+            max-height: 180px;
+        }
+    }
+}
+
+.flashcard {
+    width: inherit;
+    // padding: 0.5rem;
+    height: 26vw;
+    perspective: 1000px;
+    // position: absolute;
+}
+.flip_card {
+    margin: 0.5rem;
+    margin-bottom: -10px !important;
+    padding-right: 1rem;
+    perspective: 1000px;
+    .disable {
+        display: none;
+    }
+}
+
+.trial_swal_container {
+    // position: absolute !important;
+    border-radius: 10px;
+    margin-right: 1rem;
+}
+
+.bottom {
+    .flashcard_info {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        align-items: center;
+        .paging {
+            .btn {
+                border-radius: 50px;
+                border: 2px solid #dbdfea;
+                padding: 0px;
+                margin: 5px 10px;
+                background-color: transparent;
+                z-index: 99999 !important;
+                &:first-child {
+                    color: #d05700 !important;
+                }
+                &:last-child {
+                    color: #18ae79 !important;
+                }
+                &:hover {
+                    background-color: #edeff4;
+                }
+                span {
+                    font-size: 45px;
+                }
+            }
+
+            .page {
+                font-size: 18px;
+            }
+        }
+
+        .setting {
+
+            span {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .progress {
+        background-color: #d9dde8 !important;
+        height: 3px !important;
+        border-radius: 10px;
+        margin: 0 0.5rem;
+        span {
+            background-color: #7b89af !important;
+        }
+    }
+}
+
+.author {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    .info {
+        color: #697a8d;
+        font-size: 16px;
+    }
+    .btn {
+        display: flex;
+        align-items: center;
+        span {
+            font-size: 22px;
+            border: 2px solid #d9dde8;
+            padding: 8px;
+            border-radius: 10px;
+            margin: 0 3px;
+            &:hover {
+                background-color: #edeff4;
+            }
+        }
+    }
+    .learn_btn {
+        
+    }
+}
+
+.detail {
+    padding: 3rem 0.5rem;
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+.next_process {
+    margin-top: 20px;
+    .icon {
+        font-size: 3rem;
+    }
+    .content {
+        // padding-top: 10px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .title {
+            padding: 10px 0 5px;
+            margin: 0;
+        }
+        .descrip {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.process_link {
+    cursor: pointer;
+    text-align: right;
+    font-size: 17px;
+    i {
+        margin-right: 10px;
+    }
+    &:hover {
+
+    }
+}
+
+

@@ -1,0 +1,21 @@
+
+.avatar_box {
+    width: fit-content;
+    height: fit-content;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+}
+
+
+.card_tag {
+    display: inline-block;
+    background-color: #edefff;
+    padding: 0px 5px;
+    border-radius: 50px;
+    font-size: 0.87rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0px;
+}
