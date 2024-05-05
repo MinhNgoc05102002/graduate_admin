@@ -10,7 +10,7 @@ function* logger(action: PayloadAction) {
 }
 
 const fetchApiAuth = async (payload: ILoginPayload): Promise<AxiosResponse> => {
-  const response = await axios.post(BASE_URL_MEDIA + '/api/Auth/login', { ...payload });
+  const response = await axios.post(BASE_URL_MEDIA + '/api/Auth/login-admin', { ...payload });
   return response;
 };
 

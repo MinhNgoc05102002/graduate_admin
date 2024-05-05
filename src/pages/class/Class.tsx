@@ -405,7 +405,7 @@ export default function Classes() {
 
                         {(!_class.joined &&  !(_class.createdBy == userData?.username)) ? 
                         <>
-                            <span onClick={() => handleJoinClass()} className={`${styles.join_btn} btn btn-primary`}>Tham gia lớp học</span>
+                            {/* <span onClick={() => handleJoinClass()} className={`${styles.join_btn} btn btn-primary`}>Tham gia lớp học</span> */}
                         </> : null}
 
                         {/* <Tooltip title="Xóa, Sao chép, ..." placement="top" arrow>

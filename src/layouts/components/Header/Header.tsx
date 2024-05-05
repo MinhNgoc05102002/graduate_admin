@@ -117,15 +117,15 @@ export default function Header() {
     const debounceDropDown = useCallback(debounce((nextValue) => fetchAPISearch(nextValue), 600), [])
 
     useEffect(() => {
-        const ps = new PerfectScrollbar('#scroll_noti', {
-            wheelPropagation: false,
-        });
+        // const ps = new PerfectScrollbar('#scroll_noti', {
+        //     wheelPropagation: false,
+        // });
 
-        const ps2 = new PerfectScrollbar('#scroll_search', {
-            wheelPropagation: false,
-        });
+        // const ps2 = new PerfectScrollbar('#scroll_search', {
+        //     wheelPropagation: false,
+        // });
 
-        getNotification();
+        // getNotification();
     }, [])
 
     const handleLogout = () => {
@@ -254,7 +254,7 @@ export default function Header() {
                     {/* <!-- Search --> */}
                     <div className="navbar-nav align-items-center w-100">
                         <div className="nav-item d-flex align-items-center w-100">
-                            <i className="bx bx-search fs-4 lh-0"></i>
+                            {/* <i className="bx bx-search fs-4 lh-0"></i>
                             <form onSubmit={() => navigate(`/search/${searchText}`)}>
                                 <input
                                     type="text"
@@ -264,7 +264,7 @@ export default function Header() {
                                     value={searchText}
                                     onChange={(e) => handleSearch(e)}
                                 />
-                            </form>
+                            </form> */}
                         </div>
                     </div>
                     
@@ -272,13 +272,8 @@ export default function Header() {
 
                     <ul className="navbar-nav flex-row align-items-center ms-auto">
                         {/* <!-- Noti --> */}
-                        <li className="nav-item navbar-dropdown dropdown-user dropdown">
+                        {/* <li className="nav-item navbar-dropdown dropdown-user dropdown">
                             <a onClick={() => getNotification()} className="nav-link dropdown-toggle hide-arrow" href="#" data-bs-toggle="dropdown">
-                                {/* <div className="avatar">
-                                    <button type="button" className="btn rounded-pill btn-icon btn-outline-primary">
-                                        <span className="tf-icons bx bx-bell"></span>
-                                    </button>
-                                </div> */}
                                 <div className="avatar">
                                     <button type="button" className="btn rounded-pill btn-icon btn-outline-secondary">
                                         <span className="tf-icons bx bx-bell"></span>
@@ -290,20 +285,8 @@ export default function Header() {
                                     <NotiItem key={noti.notiId} noti = {noti}/>
                                 ))}
                                 
-                                
-                                
-                                
-                                {/* <li>
-                                    <div className="dropdown-divider"></div>
-                                </li>
-                                <li>
-                                    <a onClick={handleLogout} className="dropdown-item" href="#">
-                                        <i className="bx bx-power-off me-2"></i>
-                                        <span className="align-middle">Đăng xuất</span>
-                                    </a>
-                                </li> */}
                             </ul>
-                        </li>
+                        </li> */}
                         {/* <!--/ Noti --> */}
 
                         {/* <!-- User --> */}
@@ -315,7 +298,7 @@ export default function Header() {
                             </a>
                             <ul className="dropdown-menu dropdown-menu-end">
                                 <li>
-                                    <a onClick={() => navigate(`/account/${userData?.username}`)} className="dropdown-item" href="#">
+                                    <a className="dropdown-item" href="#">
                                         <div className="d-flex">
                                             <div className="flex-shrink-0 me-3">
                                                 <div className="avatar avatar-online">
@@ -329,10 +312,10 @@ export default function Header() {
                                         </div>
                                     </a>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <div className="dropdown-divider"></div>
-                                </li>
-                                <li>
+                                </li> */}
+                                {/* <li>
                                     <a onClick={() => navigate(`/account/${userData?.username}`)} className="dropdown-item" href="#">
                                         <i className="bx bx-user me-2"></i>
                                         <span className="align-middle">Trang cá nhân</span>
@@ -342,15 +325,6 @@ export default function Header() {
                                     <a className="dropdown-item" href="#">
                                         <i className="bx bx-cog me-2"></i>
                                         <span className="align-middle">Cài đặt</span>
-                                    </a>
-                                </li>
-                                {/* <li>
-                                    <a className="dropdown-item" href="#">
-                                        <span className="d-flex align-items-center align-middle">
-                                            <i className="flex-shrink-0 bx bx-credit-card me-2"></i>
-                                            <span className="flex-grow-1 align-middle">Billing</span>
-                                            <span className="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                                        </span>
                                     </a>
                                 </li> */}
                                 <li>

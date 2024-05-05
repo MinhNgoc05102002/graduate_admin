@@ -1,21 +1,19 @@
 import AuthLayout from "~/layouts/Auth/AuthLayout"
 import { DefaultLayout } from "~/layouts/Index"
-import { HomePage, LoginPage } from "~/pages"
+import { LoginPage } from "~/pages"
 import Account from "~/pages/account"
+import Classes from "~/pages/class/Class"
+import CreateAdmin from "~/pages/create-admin/CreateAdmin"
+import CreateCategory from "~/pages/create-category/CreateCategory"
 import Credit from "~/pages/credit/Credit"
 import Dashboard from "~/pages/dashboard"
 import Folder from "~/pages/folder/Folder"
-import Classes from "~/pages/class/Class"
-import Register from "~/pages/register/index"
-import CreateCredit from "~/pages/create-credit/CreateCredit"
 import Maintain from "~/pages/maintain/Maintain"
-import CreateFolder from "~/pages/create-folder/CreateFolder"
-import Learn from "~/pages/learn/Learn"
-import Search from "~/pages/search/Search"
-import CreateClass from "~/pages/create-class/CreateClass"
-import Setting from "~/pages/settingpage/Setting"
-import Exam from "~/pages/exam/Exam"
-import Match from "~/pages/match/Match"
+import ManageAccount from "~/pages/manage-account/ManageAccount"
+import ManageCategory from "~/pages/manage-category/ManageCategory"
+import ManageCredit from "~/pages/manage-credit/ManageCredit"
+import Manage from "~/pages/manage/Manage"
+import Register from "~/pages/register/index"
 
 export const PUBLIC_ROUTER = [
     {
@@ -23,19 +21,21 @@ export const PUBLIC_ROUTER = [
         page: LoginPage,
         layout: null
     },
+]
+
+export const PRIVATE_ROUTER = [
+    // {
+        //     path:"/",
+        //     page: HomePage,
+        //     layout: null
+        // }, 
+        
+    // ??? comment lại thì bị lỗi ???
     {
         path:"/register",
         page: Register,
         layout: AuthLayout
     },
-]
-
-export const PRIVATE_ROUTER = [
-    // {
-    //     path:"/",
-    //     page: HomePage,
-    //     layout: null
-    // }, 
     {
         // path:"/dashboard",
         path:"/",
@@ -77,66 +77,97 @@ export const PRIVATE_ROUTER = [
         page: Classes,
         layout: DefaultLayout
     },
+    // route admin
     {
-        path:"/create-credit",
-        page: CreateCredit,
+        path:"/manage-credit",
+        page: ManageCredit,
         layout: DefaultLayout
     },
     {
-        path:"/create-credit/:id",
-        page: CreateCredit,
+        path:"/manage-account",
+        page: ManageAccount,
         layout: DefaultLayout
     },
     {
-        path:"/create-folder",
-        page: CreateFolder,
+        path:"/manage-category",
+        page: ManageCategory,
         layout: DefaultLayout
     },
     {
-        path:"/create-folder/:id",
-        page: CreateFolder,
+        path:"/manage",
+        page: Manage,
         layout: DefaultLayout
     },
     {
-        path:"/create-class",
-        page: CreateClass,
+        path:"/create-admin",
+        page: CreateAdmin,
         layout: DefaultLayout
     },
     {
-        path:"/create-class/:id",
-        page: CreateClass,
+        path:"/category",
+        page: CreateCategory,
         layout: DefaultLayout
     },
     {
-        path:"/learn/:id",
-        page: Learn,
-        layout: null
-    },
-    {
-        path:"/exam/:id",
-        page: Exam,
-        layout: null
-    },
-    {
-        path:"/match/:id",
-        page: Match,
-        layout: null
-    },
-    {
-        path:"/search/:searchText",
-        page: Search,
+        path:"/category/:id",
+        page: CreateCategory,
         layout: DefaultLayout
     },
-    {
-        path:"/search",
-        page: Search,
-        layout: DefaultLayout
-    },
-    {
-        path:"/setting",
-        page: Setting,
-        layout: DefaultLayout
-    },
+    // {
+    //     path:"/create-credit/:id",
+    //     page: CreateCredit,
+    //     layout: DefaultLayout
+    // },
+    // {
+    //     path:"/create-folder",
+    //     page: CreateFolder,
+    //     layout: DefaultLayout
+    // },
+    // {
+    //     path:"/create-folder/:id",
+    //     page: CreateFolder,
+    //     layout: DefaultLayout
+    // },
+    // {
+    //     path:"/create-class",
+    //     page: CreateClass,
+    //     layout: DefaultLayout
+    // },
+    // {
+    //     path:"/create-class/:id",
+    //     page: CreateClass,
+    //     layout: DefaultLayout
+    // },
+    // {
+    //     path:"/learn/:id",
+    //     page: Learn,
+    //     layout: null
+    // },
+    // {
+    //     path:"/exam/:id",
+    //     page: Exam,
+    //     layout: null
+    // },
+    // {
+    //     path:"/match/:id",
+    //     page: Match,
+    //     layout: null
+    // },
+    // {
+    //     path:"/search/:searchText",
+    //     page: Search,
+    //     layout: DefaultLayout
+    // },
+    // {
+    //     path:"/search",
+    //     page: Search,
+    //     layout: DefaultLayout
+    // },
+    // {
+    //     path:"/setting",
+    //     page: Setting,
+    //     layout: DefaultLayout
+    // },
     {
         path:"/maintain",
         page: Maintain,

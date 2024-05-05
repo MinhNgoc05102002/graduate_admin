@@ -7,5 +7,6 @@ interface IUser {
     status?: string,
     hasWarning?:number,
     token?:string,
-    refreshToken?:string
+    refreshToken?:string,
+    roleAdmin?: string
 }

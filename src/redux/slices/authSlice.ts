@@ -42,7 +42,7 @@ console.log(initialUser)
 export const refreshToken = createAsyncThunk(
     'task/addTask',
     async (data: {token:string, refresh_token:string}) => {
-            const response:any = request.post(BASE_URL_MEDIA + '/api/Auth/refresh-token', 
+            const response:any = request.post(BASE_URL_MEDIA + '/api/Auth/refresh-token-admin', 
                 data.refresh_token, 
                 {headers: {
                     'Authorization': `Bearer ${data.token}`,

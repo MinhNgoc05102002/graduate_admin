@@ -106,107 +106,54 @@ export default function Sidebar() {
                     </li>
 
                     {/* <!-- Tìm kiếm --> */}
-                    <li className={`menu-item ${openSidebar == 'SEARCH' ? 'active': ''}`}>
+                    {/* <li className={`menu-item ${openSidebar == 'SEARCH' ? 'active': ''}`}>
                         <Link to="/search" className="menu-link" onClick={() => {setOpenSidebar('SEARCH'); setActiveTab('none'); setOpenItem('');}}>
                             <i className="menu-icon tf-icons bx bx-layout"></i>
                             <div data-i18n="Layouts">Tìm kiếm</div>
                         </Link>
-                    </li>
+                    </li> */}
 
                     <li className="menu-header small text-uppercase">
-                        <span className="menu-header-text">Thêm mới</span>
+                        <span className="menu-header-text">Quản lý</span>
                     </li>
                     <li className={`menu-item ${openSidebar == 'CREDIT' ? 'active': ''}`}>
-                        <Link to="/create-credit" className="menu-link" onClick={(e) =>  setOpenSidebar('CREDIT')}>
+                        <Link to="/manage-credit" className="menu-link" onClick={(e) =>  setOpenSidebar('CREDIT')}>
                             <i className="menu-icon tf-icons bx bx-collection"></i>
-                            <div data-i18n="Layouts">Bộ thẻ ghi nhớ</div>
+                            <div data-i18n="Layouts">Quản lý bộ thẻ ghi nhớ</div>
                         </Link>
                     </li>
                     <li className={`menu-item ${openSidebar == 'FOLDER' ? 'active': ''}`}>
-                        <Link to={`/create-folder`} className="menu-link" onClick={(e) =>  setOpenSidebar('FOLDER')}>
-                            <i className='menu-icon tf-icons bx bx-folder' ></i>
-                            <div data-i18n="Layouts">Thư mục</div>
+                        <Link to={`/manage-account`} className="menu-link" onClick={(e) =>  setOpenSidebar('FOLDER')}>
+                            <i className='menu-icon tf-icons bx bx-user' ></i>
+                            <div data-i18n="Layouts">Quản lý tài khoản</div>
                         </Link>
                     </li>
                     <li className={`menu-item ${openSidebar == 'CLASS' ? 'active': ''}`}>
-                        <Link to={`/create-class`} className="menu-link" onClick={(e) =>  setOpenSidebar('CLASS')}>
-                            <i className="menu-icon tf-icons bx bx-cube-alt"></i>
-                            <div data-i18n="Layouts">Lớp học</div>
+                        <Link to={`/manage-category`} className="menu-link" onClick={(e) =>  setOpenSidebar('CLASS')}>
+                            <i className="menu-icon tf-icons bx bx-category-alt"></i>
+                            <div data-i18n="Layouts">Quản lý danh mục</div>
                         </Link>
                     </li>
-                    {/* <li className={`menu-item ${openItem == 'CREDIT' ? 'open': ''} ${openSidebar == 'CREDIT' ? 'active': ''}`}>
-                        <a href="#" onClick={(e) => {e.preventDefault(); setOpenItem('CREDIT'); setOpenSidebar('CREDIT')}} className="menu-link menu-toggle">
-                            <i className="menu-icon tf-icons bx bx-collection"></i>
-                            <div data-i18n="Account Settings">Bộ thẻ ghi nhớ</div>
-                        </a>
-                        <ul className="menu-sub">
-                            <li className={`menu-item ${activeTab == 'CREATE_CREDIT' ? 'active': ''}`}>
-                                <Link to="/create-credit" className="menu-link" onClick={() => setActiveTab('CREATE_CREDIT')}>
-                                    <div data-i18n="Account">Thêm mới</div>
-                                </Link>
-                            </li>
-                            <li className={`menu-item ${activeTab == 'VIEW_CREDIT' ? 'active': ''}`}>
-                                <Link to={`/account/${userData?.username}`} className="menu-link" onClick={() => setActiveTab('VIEW_CREDIT')}>
-                                    <div data-i18n="Notifications">Xem tất cả bộ thẻ</div>
-                                </Link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li className={`menu-item ${openItem == 'FOLDER' ? 'open': ''} ${openSidebar == 'FOLDER' ? 'active': ''}`}>
-                        <a href="#" onClick={(e) => {e.preventDefault(); setOpenItem('FOLDER'); setOpenSidebar('FOLDER')}} className="menu-link menu-toggle">
-                            <i className='menu-icon tf-icons bx bx-folder' ></i>
-                            <div data-i18n="Authentications">Thư mục</div>
-                        </a>
-                        <ul className="menu-sub">
-                            <li className={`menu-item ${activeTab == 'CREATE_FOLDER' ? 'active': ''}`}>
-                                <Link to={`/create-folder`} className="menu-link" onClick={() => setActiveTab('CREATE_FOLDER')}>
-                                    <div data-i18n="Basic">Thêm mới</div>
-                                </Link>
-                            </li>
-                            <li className={`menu-item ${activeTab == 'VIEW_FOLDER' ? 'active': ''}`}>
-                                <Link to={`/account/folders/${userData?.username}`} className="menu-link" onClick={() => setActiveTab('VIEW_FOLDER')}>
-                                    <div data-i18n="Basic">Xem tất cả thư mục</div>
-                                </Link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li className={`menu-item ${openItem == 'CLASS' ? 'open': ''} ${openSidebar == 'CLASS' ? 'active': ''}`}>
-                        <a href="#" onClick={(e) => {e.preventDefault(); setOpenItem('CLASS'); setOpenSidebar('CLASS')}} className="menu-link menu-toggle">
-                            <i className="menu-icon tf-icons bx bx-cube-alt"></i>
-                            <div data-i18n="Misc">Lớp học</div>
-                        </a>
-                        <ul className="menu-sub">
-                            <li className={`menu-item ${activeTab == 'CREATE_CLASS' ? 'active': ''}`}>
-                                <Link to={`/create-class`} className="menu-link" onClick={() => setActiveTab('CREATE_CLASS')}>
-                                    <div data-i18n="Error">Thêm mới</div>
-                                </Link>
-                            </li>
-                            <li className={`menu-item ${activeTab == 'VIEW_CLASS' ? 'active': ''}`}>
-                                <Link to={`/account/classes/${userData?.username}`} className="menu-link" onClick={() => setActiveTab('VIEW_CLASS')}>
-                                    <div data-i18n="Under Maintenance">Xem tất cả lớp học</div>
-                                </Link>
-                            </li>
-                        </ul>
-                    </li> */}
+                    
                     {/* <!-- Components --> */}
                     <li className="menu-header small text-uppercase">
                         <span className="menu-header-text">Tài khoản</span>
                     </li>
                     {/* <!-- User interface --> */}
                     <li className={`menu-item ${openSidebar == 'ACCOUNT' ? 'active': ''}`}>
-                        <Link to={`/account/${userData?.username}`} className="menu-link" onClick={() => {setOpenSidebar('ACCOUNT'); setActiveTab('none'); setOpenItem('');}}>
+                        <Link to={`/manage`} className="menu-link" onClick={() => {setOpenSidebar('ACCOUNT'); setActiveTab('none'); setOpenItem('');}}>
                             <i className="menu-icon tf-icons bx bx-box"></i>
-                            <div data-i18n="User interface">Trang cá nhân</div>
+                            <div data-i18n="User interface">Quản trị viên</div>
                         </Link>
                     </li>
 
                     {/* <!-- Extended components --> */}
-                    <li className={`menu-item ${openSidebar == 'SETTING' ? 'active': ''}`}>
+                    {/* <li className={`menu-item ${openSidebar == 'SETTING' ? 'active': ''}`}>
                         <Link to="/setting" className="menu-link" onClick={() => {setOpenSidebar('SETTING'); setActiveTab('none'); setOpenItem('');}}>
                             <i className='menu-icon tf-icons bx bx-cog'></i>
                             <div data-i18n="Extended UI">Cài đặt</div>
                         </Link>
-                    </li>
+                    </li> */}
 
                     {/* <!-- Forms & Tables --> */}
                     <li className="menu-header small text-uppercase">

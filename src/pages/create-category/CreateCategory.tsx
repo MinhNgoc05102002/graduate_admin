@@ -10,18 +10,17 @@ import Loading from '~/components/Loading/Index';
 import { Post } from '~/services/axios';
 import { CheckResponseSuccess } from '~/utils/common';
 import NotFound from '../notfound/NotFound';
-import styles from './CreateClass.module.scss';
+import styles from './CreateCategory.module.scss';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 const INIT_VALUE = {
     name: "",
-    description: "",
-    acceptEdit: false
+    description: ""
 }
 
 
-export default function CreateClass() {
+export default function CreateCategory() {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const { id } = useParams();
@@ -29,14 +28,13 @@ export default function CreateClass() {
 
     useEffect(() => {
         if(id) {
-            getInfoClass(id);
+            getInfoCategory(id);
         }
     }, [id]);
 
     const validationSchema = Yup.object().shape({
-        name: Yup.string().required('Hãy nhập tên lớp học').max(100, 'Tên lớp học không được vượt quá 100 kí tự'),
-        description: Yup.string().required('Hãy nhập mô tả của lớp học').max(2000, 'Mô tả không được vượt quá 2000 kí tự'),
-        acceptEdit: Yup.boolean()
+        name: Yup.string().required('Hãy nhập tên thể loại').max(1000, 'Tên thể loại không được vượt quá 1000 kí tự'),
+        description: Yup.string().required('Hãy nhập mô tả của thể loại').max(2000, 'Mô tả không được vượt quá 2000 kí tự')
     });
 
     const {
@@ -54,26 +52,24 @@ export default function CreateClass() {
         resolver: yupResolver(validationSchema)
       });
     
-      const watchCheck = watch('acceptEdit')
-
     const onSubmit = async (data:any) => {
         setIsLoading(true);
 
         console.log(data);
 
         await Post(
-            "/api/Class/create-class", 
+            "/api/Category/create-category", 
             data,
         ).then(async (res) => {
             if(CheckResponseSuccess(res)) {
                 let classId = res?.returnObj;
                 Swal.fire({
                     icon: "success",
-                    title: "Tạo lớp học thành công",
+                    title: "Tạo thể loại thành công",
                     showConfirmButton: false,
                     timer: 600,
                   });
-                navigate(`/class/${classId}`);
+                navigate(`/manage-category`);
             }
             else {
                 toast.error("Đã có lỗi xảy ra.");
@@ -92,21 +88,21 @@ export default function CreateClass() {
         setIsLoading(true);
 
         await Post(
-            "/api/Class/edit-class", 
+            "/api/Category/update-category", 
             {
                 ...data,
-                classId: id
+                categoryId: id
             },
         ).then(async (res) => {
             if(CheckResponseSuccess(res)) {
                 // let creditId = res?.returnObj;
                 Swal.fire({
                     icon: "success",
-                    title: "Cập nhật lớp học thành công",
+                    title: "Cập nhật thể loại thành công",
                     showConfirmButton: false,
-                    timer: 600,
+                    timer: 700,
                   });
-                navigate(`/class/${id}`);
+                navigate(`/manage-category`);
             }
             else {
                 toast.error("Đã có lỗi xảy ra.");
@@ -121,10 +117,10 @@ export default function CreateClass() {
         
       };
 
-    const getInfoClass = async (classId:string) => {
+    const getInfoCategory = async (classId:string) => {
         setIsLoading(true);
         await Post(
-            "/api/Class/get-class-by-id", 
+            "/api/Category/get-by-id", 
             classId, 
             {
                 headers: {
@@ -139,8 +135,6 @@ export default function CreateClass() {
                     setIsEdit(true);
                     setValue('description', _class.description);
                     setValue('name', _class.name);
-                    setValue('acceptEdit', _class.acceptEdit);
-                    console.log(getValues('acceptEdit'), _class.acceptEdit)
                 }
                 else {
                     setIsEdit(false);
@@ -171,7 +165,7 @@ export default function CreateClass() {
             <div className={`container-xxl flex-grow-1 container-p-y px-5`}>
                 <div className={styles.title}>
                     <h4 className={styles.name}>
-                        {isEdit ? 'Cập nhật lớp học' : 'Tạo lớp học mới'}
+                        {isEdit ? 'Cập nhật thể loại' : 'Tạo thể loại mới'}
                     </h4>
                     <div className="d-flex justify-content-sm-end">
                         {isEdit ?
@@ -191,7 +185,7 @@ export default function CreateClass() {
                                 required
                                 id="name"
                                 // name="loginName"
-                                label="Nhập tên lớp học"
+                                label="Nhập tên thể loại"
                                 fullWidth
                                 margin="dense"
                                 variant="outlined" 
@@ -218,17 +212,6 @@ export default function CreateClass() {
                                 helperText={errors.description ? errors.description?.message : ""}
                             />
 
-                            <div className="input_checkbox">
-                                <FormControlLabel
-                                    label="Cho phép các thành viên trong lớp thêm và bỏ học phần, thư mục"
-                                    control={
-                                        <Checkbox
-                                            checked={watchCheck}
-                                            {...register('acceptEdit')}
-                                        />
-                                    }
-                                />
-                            </div>
                         </div>
 
                     </div>

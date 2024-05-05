@@ -80,7 +80,7 @@ function DefaultLayout({ children }: any) {
                         {children}
 
                         {/* <!-- Footer --> */}
-                        <Footer />
+                        {/* <Footer /> */}
                         {/* <!-- / Footer --> */}
 
                         <div className="content-backdrop fade"></div>

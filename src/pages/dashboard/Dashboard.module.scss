@@ -1,0 +1,45 @@
+.item {
+    margin: 5px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,.08);
+    border-radius: 5px;
+    padding: 18px 10px 18px 15px;
+    display: flex;
+    align-items: center;
+    .icon {
+        color: #00c292;
+        span {
+            font-size: 50px;
+            margin: 0px 15px 0px 0px;
+            // height: 50px;
+        }
+        .green {
+            filter: invert(60%) sepia(27%) saturate(5709%) hue-rotate(127deg) brightness(94%) contrast(103%) !important;
+        }
+        .purple {
+            color: #b293e6 !important;
+        }
+        .blue {
+            color: #56c7f7 !important;
+        }
+        .yellow {
+            color: #fba68b !important;
+        }
+    }
+    .content {
+        .number {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .text {
+            color: var(--gray-deep-color);;
+            font-size: 14px;
+        }
+    }
+}
+
+.chart_container {
+    // padding: 10px;
+    // display: flex;
+    // justify-content: center;
+}

@@ -24,7 +24,7 @@ export default function NotFound() {
             <div className="container-xxl container-p-y">
                 <div className="misc-wrapper">
                 <h2 className="mb-2 mx-2">Không tìm thấy trang :(</h2>
-                <p className="mb-4 mx-2">Oops! 😖 Trang bạn yêu cầu không có trên hệ thống.</p>
+                <p className="mb-4 mx-2">Oops! 😖 Trang bạn yêu cầu không có trên hệ thống hoặc bạn không có quyền truy cập.</p>
                 {/* <a href="index.html" className="btn btn-primary">Trở về</a> */}
                 <Link to={isLoggedIn ? "/": "/login"} className="btn btn-primary">
                     Trở về

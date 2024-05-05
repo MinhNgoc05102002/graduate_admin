@@ -13,7 +13,7 @@ import { CheckResponseSuccess, GetIdFromCurrentPage, findNotifDate } from "~/uti
 // import required modules
 import LinearProgress from "@mui/material/LinearProgress";
 import MenuItem from '@mui/material/MenuItem';
-import Tooltip from "@mui/material/Tooltip";
+import Tooltip from "@mui/material/Tooltip";    
 import 'animate.css';
 import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
@@ -686,7 +686,7 @@ export default function Credit() {
                     {/* </Tooltip> */}
                 </div> : 
                 <div className={styles.learn_btn}>
-                    <button type="button" className="btn btn-primary" onClick={() => handleStartLearn()}>Học bộ thẻ này</button>
+                    {/* <button type="button" className="btn btn-primary" onClick={() => handleStartLearn()}>Học bộ thẻ này</button> */}
                 </div>
                 }
 

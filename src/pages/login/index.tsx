@@ -174,8 +174,8 @@ function LoginPage() {
                                 </a>
                             </div>
                             {/* <!-- /Logo --> */}
-                            <h4 className="mb-2">Chào mừng đến với Flash! 👋</h4>
-                            <p className="mb-4">Hãy đăng nhập tài khoản của bạn và bắt đầu khám phá</p>
+                            <h4 className="mb-2">Truy cập hệ thống quản trị viên</h4>
+                            {/* <p className="mb-4">Hãy đăng nhập tài khoản của bạn và bắt đầu khám phá</p> */}
                             
                             <form id="formAuthentication" className="mb-3" action="index.html" method="POST">
                                 <div className="mb-3">
@@ -231,16 +231,12 @@ function LoginPage() {
                                             ),
                                           }}
                                     />
-                                    {/* <Typography variant="inherit" color="textSecondary">
-                                        {errors.password?.message}
-                                    </Typography> */}
-                                    {/* <small style={{color: "#ff3e1d"}}>{msgErrorLogin}</small>     */}
-                                    <div className="d-flex justify-content-between">
+                                    {/* <div className="d-flex justify-content-between">
                                         <label className="form-label" htmlFor="password"></label>
                                         <a href="#" onClick={() => setOpen(true)}>
                                             <small>Quên mật khẩu?</small>
                                         </a>
-                                    </div>
+                                    </div> */}
 
                                 </div>
                                 {/* <div className="mb-3">
@@ -255,15 +251,12 @@ function LoginPage() {
                                 </div>
                             </form>
 
-                            <p className="text-center">
+                            {/* <p className="text-center">
                                 <span>Bạn chưa có tài khoản? </span>
                                 <Link to="/register">
                                     <span>Tạo tài khoản</span>
                                 </Link>
-                                {/* <a href="/register">
-                                    <span>Tạo tài khoản</span>
-                                </a> */}
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                     {/* <!-- /Register --> */}
