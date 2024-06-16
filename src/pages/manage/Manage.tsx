@@ -341,7 +341,7 @@ export default function Manage() {
               {/* <div className="col-1"></div> */}
               <div className="col-3">
                 <button className='btn btn-primary mt-2 mx-2' onClick={handleSubmit(onSubmitSearch)}>Tìm kiếm</button>
-                <button className='btn btn-info mt-2 mx-2' onClick={() => navigate(`/create-admin`)}>Thêm mới</button>
+                {userData?.roleAdmin == "CEO" ? <button className='btn btn-info mt-2 mx-2' onClick={() => navigate(`/create-admin`)}>Thêm mới</button> : null }
               </div>
           </form>
         </div>
