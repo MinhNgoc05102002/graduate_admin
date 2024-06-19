@@ -288,7 +288,7 @@ export default function Dashboard() {
                 {/* Tác giả hàng đầu */}
                 {/* <h4>Tác giả hàng đầu</h4> */}
                 <div className="divider text-start mb-3">
-                    <div className="divider-text fs-5 fw-semibold">Biểu đồ số lượng bộ thẻ mới theo ngày</div>
+                    <div className="divider-text fs-5 fw-semibold">Biểu đồ số lượng bộ thẻ mới theo tháng</div>
                 </div>
                 <div className="mb-5">
                     <div className={styles.chart_container}>
